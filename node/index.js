@@ -19,7 +19,7 @@ const connection = mysql.createConnection(config)
 const sql = `INSERT INTO people(name) VALUES ('` + name + `')`
 connection.query(sql)
 
-var result = '<h2>Lista de nomes cadastrada no banco de dados.</h2><br><ul>';
+var result = '<h2>Lista de nomes cadastrados no banco de dados.</h2><br><ul>';
 connection.query('select * from people', function (err, rows, fields) {
     if (err) throw err;
     for(i=0; i < rows.length; i++) {
